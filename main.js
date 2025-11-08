@@ -22,7 +22,7 @@ const F = 'Farenheit';
 const K = 'Kelvin';
 
 
-function convert(from, to, tempValue){
+function convert(from, to, tempValue, conTemp){
 
     
 
@@ -34,9 +34,11 @@ function convert(from, to, tempValue){
 
     if(from === C){
         if(to === F){
-            return (tempValue * 1.8) + 32
+            conTemp = (tempValue * 1.8) + 32
+            return Math.floor(conTemp)
         }else if(to === K){
-                return tempValue + 273.15
+                conTemp = tempValue + 273.15
+                return Math.floor(conTemp)
             }
     };
 
@@ -44,9 +46,11 @@ function convert(from, to, tempValue){
 
     if(from === F){
         if(to === C){
-            return (tempValue - 32) * 5/9
+            conTemp = (tempValue - 32) * 5/9
+            return Math.floor(conTemp)
         }else if(to === K){
-               return (tempValue - 32) * 5/9 +273.15
+                (tempValue - 32) * 5/9 +273.15
+                return Math.floor(conTemp)
             }
     };
 
@@ -54,9 +58,12 @@ function convert(from, to, tempValue){
 
     if(from === K){
         if(to === C){
-            return tempValue - 273.15
+            conTemp = tempValue - 273.15
+            return Math.floor(conTemp)
+
         }else if(to === F){
-                return (tempValue - 273.15) * 1.8 + 32
+                conTemp = (tempValue - 273.15) * 1.8 + 32
+                return Math.floor(conTemp)
             }
     };
     return null;
